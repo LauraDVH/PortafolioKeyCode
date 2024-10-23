@@ -1,0 +1,174 @@
+/* Estilos para el contenedor principal de la navegación */
+.nav {  
+  margin: 3rem auto 0 auto;  
+  padding: 0 5rem;   
+  display: flex; 
+  justify-content: space-between;  
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.navNavigation {
+  display: flex;
+}
+
+.navNavigation ul {   
+  display: flex;
+  list-style: none;
+}
+
+.navNavigation ul li {  
+  margin-right: 4.4rem;
+}
+
+.navNavigation ul li a { 
+ position: relative; /* Importante para posicionar la línea */
+}
+
+/* Estilos para añadir una línea debajo de las palabras */
+.navNavigation ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Ubicar la línea justo debajo del texto */
+  width: 100%;
+  height: 3px; /* Grosor de la línea */
+  background-color: var(--main); /* Color de la línea */
+  transform: scaleX(0); /* Esconde la línea inicialmente */
+  transition: transform 0.3s ease; /* Transición suave */
+  transform-origin: left; /* Animación desde la izquierda */
+}
+
+/* Mostrar la línea debajo del texto al hacer hover */
+.navNavigation ul li a:hover::after {
+  transform: scaleX(1); /* Aparecerá la línea */
+  opacity: 1; /* La línea se hace visible */
+  box-shadow: 0 0 50px var(--main), 0 0 50px var(--main);  
+}
+
+/* Estilos para la marca de la navegación */
+.navNavigationBrand {
+  font-weight: 900;
+  margin-right: 2rem; 
+}
+
+/* Estilos para el separador después de la marca de la navegación */
+.navNavigationBrand::after {
+  content: "|";
+  font-weight: 100;
+  font-size: 1.6rem;
+  margin-left: 1.2rem;
+}
+
+/* Estilos para los enlaces sociales */
+.navSocial {
+  display: flex;
+}
+
+.navSocial a {
+  margin-left: 2rem;
+  color: var(--text);
+  font-size: 2.4rem;
+}
+
+.navSocial a:hover {
+  color: var(--main);
+  transition: 30ms;
+}
+
+/* Estilos para el botón de hamburguesa */
+.hamburguerBtn {
+  display: none;
+  border: none;
+  background: none;
+  margin-right: 2rem;
+}
+
+/* Estilos para el icono del botón de hamburguesa */
+.hamburguerBtn svg {
+  color: white;
+  font-size: 2.3rem;
+}
+
+/* Estilos para pantallas de hasta 900px de ancho */
+@media (max-width: 900px) {
+  .navNavigation ul {
+      display: none;
+  }
+
+  .active {
+      flex-direction: column;
+      align-items: center;
+      overflow: visible;
+      position: fixed;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      justify-content: start;      
+      z-index: 10;
+      margin: 0;
+  }
+
+  .active ul {
+      display: inline-block;
+      flex-direction: column;
+      height: 80%;
+      justify-content: space-evenly;
+  }
+
+  .active .navNavigation {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 90%;
+      justify-content: center;
+  }
+
+  .active .navNavigation .hamburguerBtn,
+  .active .navNavigation .navNavigationBrand,
+  .active .navNavigation ul li {
+      margin: 0;
+  }
+
+  .active ul {
+      flex-direction: column;
+  }
+
+  .navNavigationBrand::after {
+      content: none;
+  }
+
+  .active .navNavigationBrand {
+      padding-top: 5rem;
+  }
+
+  .hamburguerBtn {
+      display: block;
+  }
+
+  .active .hamburguerBtn {
+      padding-top: 5rem;
+  }
+
+  .active .hamburguerBtn svg:hover {
+      transform: rotate(90deg);
+      transition: 1000ms;
+      color: var(--main);
+  }
+
+  .active .navSocial a {
+      margin: 0;
+  }
+
+  .active .navSocial a:nth-child(1) {
+      margin-right: 2.4rem;
+  }
+}
+
+/* Estilos para pantallas de hasta 500px de ancho */
+@media (max-width: 500px) {
+  .nav {
+      padding: 0 2rem;
+  }
+}

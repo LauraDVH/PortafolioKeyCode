@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {   
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif; /* Si estás usando una fuente personalizada */
+  } 
+
+  :root {
+    --background: #253043;
+    --main: #7af386;
+    --secundary: #3ce61aeb;
+    --text: #ffffff;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    margin: 5px;
+    background: var(--background);
+  }
+
+  /*barra de scroll */
+  ::-webkit-scrollbar-thumb {
+    background: #54eb75;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #05f21d;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #05f21d;
+    box-shadow: 0 0 10px #05f21d, 0 0 20px #05f21d, 0 0 30px #05f21d, 0 0 40px #05f21d;
+}
+  * {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+  }
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+  }
+  
+  
+  
